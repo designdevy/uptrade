@@ -29,7 +29,8 @@
     * Users can change profile info after account has been created.
 
 # Schema
-[Schema](https://drawsql.app/solodolo/diagrams/ebay-clone#)
+Click here for a better visual representation of 
+[Schema](https://drawsql.app/solodolo/diagrams/ebay-clone#) <---------------
 ### User Table
 ***
 | Column name  | Data Type    | constraints       |
@@ -70,7 +71,6 @@
 | product_id      | integer  | not null    |
 * user_id references Users.id
 * product_id references Products.id
-
 
 ![Wireframe](site_wireframe.png)
 <!-- ### Sub-Categories Table
