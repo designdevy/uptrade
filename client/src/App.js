@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
-
-import UserList from './components/UsersList';
-
+import { useDispatch } from 'react-redux';
+import { setUser } from './store/auth';
+import NavBar from './components/nav_comp/NavBar'
+import Landing from './Pages/Landing'
+import Cart from './Pages/Cart'
+// import UserList from './components/UsersList';
+import { ProtectedRoute } from './store/Routes';
 
 function App() {
+    const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const loadUser = async () => {
+            // enter your back end route to get the current user
+            const res = await fetch("/api/session/");
+
+            if (res.ok) {
+                res.data = await res.json(); // current user info
+                dispatch(setUser(res.data.user))
+            }
+            setLoading(false);
+        }
+        loadUser();
+    }, []);
 
   return (
     <BrowserRouter>
-        <nav>
-            <ul>
-                <li><NavLink to="/" activeClass="active">Home</NavLink></li>
-                <li><NavLink to="/users" activeClass="active">Users</NavLink></li>
-            </ul>
-        </nav>
+        <NavBar ></NavBar>
         <Switch>
-            <Route path="/users">
-                <UserList />
-            </Route>
+            <Route path="/cart" component={Cart} />
+            <Route path="/" component={Landing} />
 
-            <Route path="/">
-                <h1>My Home Page</h1>
-            </Route>
         </Switch>
     </BrowserRouter>
   );
