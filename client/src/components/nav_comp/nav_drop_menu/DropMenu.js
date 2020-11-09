@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
@@ -10,7 +9,6 @@ import MenuList from '@material-ui/core/MenuList';
 
 
 function DropMenu({ category, subCats}) {
-    const dispatch = useDispatch();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
   
@@ -45,34 +43,32 @@ function DropMenu({ category, subCats}) {
             <div id="drop-menu-handles" >
                 <div>
                     <Button 
-                        id="categories"
-                        ref={anchorRef}
-                        aria-controls={open ? 'menu-list-grow' : undefined}
-                        aria-haspopup="true"
-                        onMouseOver={handleToggle}
-                        
-                        // onClick={handleToggle}
+                      id="categories"
+                      ref={anchorRef}
+                      aria-controls={open ? 'menu-list-grow' : undefined}
+                      aria-haspopup="true"
+                      onMouseOver={handleToggle}
+                      onClick={handleToggle}
                     >
-                      
-                        <h2 onMouseOver={handleToggle} >{category}</h2>
+                      {category}
+                      {/* <h2 onClick={handleToggle} >{category}</h2> */}
                     </Button>
                     <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                         {({ TransitionProps, placement }) => (
-                            <Grow
-                                {...TransitionProps}
-                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                            >
-                                <Paper id="menu">
-                                    <ClickAwayListener onClickAway={handleClose} onMouseLeave={handleClose}>
-                                    <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>                                   
-                                        {subCats.map((subCat) => (
-                                        <MenuItem >
-                                          {subCat}
-                                        </MenuItem>))}
-                                    </MenuList>
-                                    </ClickAwayListener>
-                                </Paper>
-                            </Grow>
+                          <Grow
+                            {...TransitionProps}
+                            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                          >
+                            <Paper id="menu">
+                                <ClickAwayListener onClickAway={handleClose} >
+                                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>                                   
+                                      {subCats.map((subCat) => (
+                                        <MenuItem >{subCat}</MenuItem>
+                                      ))}
+                                  </MenuList>
+                                </ClickAwayListener>
+                            </Paper>
+                          </Grow>
                         )}
                     </Popper>
                 </div>
