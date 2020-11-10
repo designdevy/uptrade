@@ -11,7 +11,7 @@
 #landing-content {
     display: inherit;
     flex-flow: column;
-    height: 90vh;
+    height: auto;
     width: 90%;
     margin: auto;
     margin-top: 50px;
@@ -26,39 +26,44 @@
     margin: auto;
     margin-bottom: 25px;
     background: white;
+    overflow: hidden;
 }
 
 #landing-categories {
     display: flex;
     flex-flow: row wrap;
-    height: 100%;
+    height: auto;
     width: 100%;
     margin: auto;
     background: white;
     justify-content: space-evenly;
-    padding-top: 35px;
+    padding-top: 45px;
+    padding-bottom: 35px;
 }
-
 
 #category-1 {
     background: gray;
     height: 250px;
     width: 300px;
+    margin-bottom: 10px;
 }
 #category-2 {
     background: gray;
     height: 250px;
     width: 300px;
+    margin-bottom: 10px;
 }
 #category-3 {
     background: gray;
     height: 250px;
     width: 300px;
+    margin-bottom: 10px;
 }
 #category-4 {
     background: gray;
     height: 250px;
     width: 300px;
+    margin-bottom: 10px;
 }
 
 #landing-footer {
@@ -67,7 +72,7 @@
     height: 200px;
     margin-top: 25px;
 }
-    @media only screen and (min-width: 1400px) {
+    /* @media only screen and (min-width: 1400px) {
         #landing-content {
             height: 90vh;
             width: 80%;
@@ -77,4 +82,4 @@
         }
         
         
-    }
+    } */

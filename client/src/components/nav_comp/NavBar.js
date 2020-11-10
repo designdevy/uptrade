@@ -38,8 +38,6 @@ function NavBar(){
     const catObj = getSubCats();
     let navClass = 'outer-nav'
     
-    
-    
     if(currentUserId){
         navClass = 'outer-nav-logged-in'
     }
