@@ -2,7 +2,7 @@ import React from 'react';
 import Featured from '../components/page_comp/Featured'
 import '../style/landing.css'
 
-function Landing(props) {
+function Landing() {
     return (
         <>
             <div className="landing-wrap">
