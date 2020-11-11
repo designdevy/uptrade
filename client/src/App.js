@@ -11,7 +11,7 @@ import { ProtectedRoute } from './store/Routes';
 function App() {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         const loadUser = async () => {
             // enter your back end route to get the current user
