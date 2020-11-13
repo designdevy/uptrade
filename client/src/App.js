@@ -5,13 +5,14 @@ import { setUser } from './store/auth';
 import NavBar from './components/nav_comp/NavBar'
 import Landing from './Pages/Landing'
 import Cart from './Pages/Cart'
+import Profile from './Pages/Profile'
 // import UserList from './components/UsersList';
 import { ProtectedRoute } from './store/Routes';
 
 function App() {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         const loadUser = async () => {
             // enter your back end route to get the current user
@@ -31,6 +32,7 @@ function App() {
         <NavBar ></NavBar>
         <Switch>
             <Route path="/cart" component={Cart} />
+            <Route path="/profile" component={Profile} />
             <Route path="/" component={Landing} />
 
         </Switch>

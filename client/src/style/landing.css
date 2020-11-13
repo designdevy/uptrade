@@ -1,7 +1,7 @@
 .landing-wrap {
     display: inherit;
     flex-flow: column nowrap;
-    background: slategray;
+    background: rgba(112, 128, 144, 0.308);
     height: 100%;
     width: 100%;
     align-content: center;
@@ -25,7 +25,7 @@
     width: 100%;
     margin: auto;
     margin-bottom: 25px;
-    background: white;
+    background: rgb(36, 144, 177);
     overflow: hidden;
 }
 
@@ -42,16 +42,19 @@
 }
 
 #category-1 {
-    background: gray;
+    background: white;
     height: 250px;
     width: 300px;
+    margin: 0;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 #category-2 {
-    background: gray;
+    background: white;
     height: 250px;
     width: 300px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 #category-3 {
     background: gray;
