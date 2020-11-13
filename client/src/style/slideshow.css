@@ -1,21 +1,63 @@
-* {box-sizing:border-box}
+#slideshow {
+  display: flex;
+  width: 100%;
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 100%;
+  /* max-width: 1000px; */
   position: relative;
-  margin: auto;
+  /* margin: auto; */
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.slide {
+  width: 100%;
 }
+.slide > span {
+  width: 100%;
+  height: 100%;
+}
+
+.current-img {
+  /* height: 100%; */
+  width: 600px;
+  margin-right: 10px;
+}
+
+.current-desc {
+  width: 350px;
+  text-align: left;
+}
+.current-price {
+  position: absolute;
+  width: 350px;
+  text-align: center;
+  top: 0;
+  
+}
+
+#current-title {
+  position: absolute;
+  height: 25%;
+  width: 600px;
+  margin-right: 10px;
+  background-color: rgba(128, 128, 128, 0.212);
+  text-align: center;
+  top: 0;
+  font-weight: 900;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.685);
+}
+
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 50%;
   width: auto;
   margin-top: -22px;
@@ -54,9 +96,7 @@
   animation-duration: 1.5s;
 }
 
-#slide-img {
-  width: 100%;
-}
+
 @-webkit-keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
@@ -65,4 +105,9 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+@media screen and (max-width: 740px) {
+  #product-info {
+    display: none;
+  }
 }

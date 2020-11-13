@@ -2,13 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
     img: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(5000),
     },
     title: {
       type: DataTypes.STRING,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(5000),
     },
     category: {
       type: DataTypes.ARRAY(DataTypes.STRING),

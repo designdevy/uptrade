@@ -1,5 +1,6 @@
 import React from 'react';
 import Featured from '../components/page_comp/Featured'
+import Categories from '../components/page_comp/Categories';
 import '../style/landing.css'
 
 function Landing() {
@@ -9,8 +10,10 @@ function Landing() {
                 <div id="landing-content">
                     <Featured />
                     <div id="landing-categories">
-                        <div id="category-1"></div>
-                        <div id="category-2"></div>
+                            <Categories />
+                        {/* <div id="category-1">
+                        </div> */}
+                        {/* <div id="category-2"></div> */}
                         <div id="category-3"></div>
                         <div id="category-4"></div>
                     </div>

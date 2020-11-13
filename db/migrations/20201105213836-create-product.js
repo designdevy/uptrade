@@ -10,7 +10,7 @@ module.exports = {
       },
       img: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(5000)
       },
       title: {
         allowNull: false,
@@ -18,10 +18,10 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(5000)
       },
       category: {
-        type: Sequelize.ARRAY(Sequelize.STRING(255))
+        type: Sequelize.ARRAY(Sequelize.STRING(1000))
       },
       price: {
         allowNull: false,

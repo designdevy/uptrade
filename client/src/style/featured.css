@@ -37,14 +37,14 @@
   }
   
   /* Position the "next button" to the right */
-  .next {
+  /* .next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
   .prev {
       left: 0;
   }
-  
+   */
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
   .next:hover {
@@ -100,6 +100,41 @@
       flex-flow: row;
       /* margin: auto; */
       width: 50%;
+  }
+  #product-info {
+    color: white;
+  }
+  #current-onSale {
+    display: flex;
+    flex-flow: row;
+    font-size: 50px;
+    font-weight: bolder;
+  
+  }
+  .old-price {
+    position: relative;
+    color: rgba(0, 0, 0, 0.678);
+    margin-right: 10px;
+  }
+  .old-price:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 3px solid;
+    border-color: black;
+  
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+  }
+
+  .current-desc {
+    padding-left: 10px;
+    font-weight: bold;
   }
   /* .gallery > img {
     margin: auto;
