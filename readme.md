@@ -91,7 +91,8 @@ This is the backend for the Solo React project.
    * `npm run db:migrate`
    * `npm run db:seed:all`
    * `npm start`
-
+   * `npm run db:drop` - if you want to quickly drop db
+   
 ## Deploy to Heroku
 
 1. Create a new project

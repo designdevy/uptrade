@@ -17,6 +17,10 @@ function Comp() {
     const applianceImages = []
     const applianceTitles = []
     const appliancePrices = []
+    //Rarities
+    const rareImages = []
+    const rareTitles = []
+    const rarePrices = []
     useEffect(() => {
         const getProducts = async () => {
             const res = await fetch('/api/products/')
@@ -35,10 +39,20 @@ function Comp() {
             apparelPrices.push(product.price)
             apparelTitles.push(product.title)   
         }
-        if(product.category.includes("Games") || product.category.includes("Video/Photography") || product.category.includes("Cell Phones & Smart Watches")){
+        if(product.category.includes("Games") || product.category.includes('TV & Video') || product.category.includes("Cell Phones & Smart Watches")){
             elecImages.push(product.img)
             elecPrices.push(product.price)
             elecTitles.push(product.title)
+        }
+        if(product.category.includes("Refridgeration") || product.category.includes('Washer/Dryer') || product.category.includes("Cooking")){
+            applianceImages.push(product.img)
+            appliancePrices.push(product.price)
+            applianceTitles.push(product.title)
+        }
+        if(product.category.includes("Antiques/Vintage") || product.category.includes('Rare Find')){
+            rareImages.push(product.img)
+            rarePrices.push(product.price)
+            rareTitles.push(product.title)
         }
         
     })
@@ -50,6 +64,12 @@ function Comp() {
            </div>
            <div id="category-2" >
                 <CategorySlideShow images={elecImages} prices={elecPrices} titles={elecTitles}/>
+           </div>
+           <div id="category-3" >
+                <CategorySlideShow images={applianceImages} prices={appliancePrices} titles={applianceTitles}/>
+           </div>
+           <div id="category-4" >
+                <CategorySlideShow images={rareImages} prices={rarePrices} titles={rareTitles}/>
            </div>
         </>
     );

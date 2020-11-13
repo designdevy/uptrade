@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import '../../style/featured.css'
 import SlideShow from './SlideShow';
-import {getProducts} from '../../store/products'
+
 
 
 function Featured() {

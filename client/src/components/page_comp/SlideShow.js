@@ -24,7 +24,7 @@ const SlideShow = ({productArr}) => {
         }
         
     })
-    console.log(images)
+    // console.log(images)
     
     // const images=[
     //     "https://images-na.ssl-images-amazon.com/images/I/61orXh2c8PL._AC_SX385._SX._UX._SY._UY_.jpg",

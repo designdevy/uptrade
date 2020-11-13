@@ -58,9 +58,11 @@ export const signup = (username, email, password, confirmPassword) => {
         
         });
         res.data = await res.json()
-       console.log(res.data)
-       console.log(res)
-        dispatch(newUser(res.data.user));
+    //    console.log(res.data)
+    //    console.log(res)
+        if(res.ok){
+            dispatch(newUser(res.data.user));
+        }
         
         return res
     }

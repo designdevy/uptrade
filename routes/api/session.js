@@ -38,8 +38,6 @@ router.put(
     console.log("We made it ===============", req.body)
     
     const user = await User.login(req.body);
-    // console.log(user)
-    // console.log("here too? ===========")
     if (user) {
       const token = await generateToken(user);
       res.cookie("token", token, {
