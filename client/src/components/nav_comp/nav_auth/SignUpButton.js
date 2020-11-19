@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import SignUpModal from './SignUpModal';
+import { Button } from '@material-ui/core';
 import '../../../style/signup.css'
 
 function SignUpButton(){
@@ -18,7 +19,7 @@ function SignUpButton(){
 
     return(
         <div className="signup">
-            <button id="signup" type="button" onClick={handleOpen} >Create account</button>
+            <Button id="signup" type="button" onClick={handleOpen} >Create account</Button>
             <div className="modalcontainer">
                 <Modal 
                     className="login-form-outer"

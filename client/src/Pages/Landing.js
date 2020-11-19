@@ -4,20 +4,14 @@ import Categories from '../components/page_comp/Categories';
 import Footer from '../components/page_comp/Footer';
 import '../style/landing.css'
 
-function Landing({category}) {
-    
+function Landing({productArr}) { 
     return (
         <>
             <div className="landing-wrap">
                 <div id="landing-content">
-                    <Featured />
+                    <Featured productArr={productArr}/>
                     <div id="landing-categories">
-                            <Categories />
-                        {/* <div id="category-1">
-                        </div> */}
-                        {/* <div id="category-2"></div> */}
-                        {/* <div id="category-3"></div>
-                        <div id="category-4"></div> */}
+                        <Categories productArr={productArr} />
                     </div>
                 </div>
                 <div id="landing-footer">

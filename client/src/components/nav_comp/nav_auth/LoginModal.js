@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../store/auth';
 import { Redirect } from 'react-router-dom';
 import { Container } from '@material-ui/core'
-// import '../../../style/loginmodal.css'
+import '../../../style/loginmodal.css'
 
 function LoginModal() {
     const [username, setUsername] = useState('')

@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from './store/auth';
 import NavBar from './components/nav_comp/NavBar'
-import Landing from './Pages/Landing'
-import Cart from './Pages/Cart'
-import Profile from './Pages/Profile'
-import Category from './Pages/Category'
-// import UserList from './components/UsersList';
-import { ProtectedRoute } from './store/Routes';
+import Pages from './Pages/Pages'
+// import { saveState, loadState } from './store/localStorage'
 
-
-function App() {
+function App({state}) {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
 
@@ -27,18 +22,14 @@ function App() {
             setLoading(false);
         }
         loadUser();
-    }, []);
+    }, [dispatch, setLoading]);
+    console.log(loading)
 
+    
   return (
     <BrowserRouter>
         <NavBar ></NavBar>
-        <Switch>
-            <Route path="/cart" component={Cart} />
-            <Route path="/category/:category" component={Category} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/" component={Landing} />
-
-        </Switch>
+        <Pages state={state}/>
     </BrowserRouter>
   );
 }

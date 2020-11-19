@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import LeftNav from './LeftNav'
 import MiddleNav from './MiddleNav'
 import RightNav from './RightNav'
@@ -11,7 +11,7 @@ import '../../style/navbar.css'
 function NavBar(){
     const currentUserId = useSelector(state => state.auth.id);
     const [categories, setCat] = useState([])
-    
+
     useEffect(() => {
         const getCat = async () => {
             const res = await fetch('/api/categories/')
@@ -36,6 +36,7 @@ function NavBar(){
     }
     
     const catObj = getSubCats();
+
     let navClass = 'outer-nav'
     
     if(currentUserId){
@@ -59,24 +60,3 @@ function NavBar(){
 }
 
 export default NavBar;
-
-
-/* 
-        added sub-categories to db as array with category as the key,
-        need to query by category or get arr from response 
-    */
-    // const dealSubCat = ['On Sale', 'Lower than anywhere else', 'Featured']
-    // const apparelSubCat = ['Mens', 'Womens', 'Child', 'Tops', 'Bottoms', 'Shoes']
-    // const elecSubCat = ['Games', 'Video/Photography', 'Movies', 'Cell Phones & Smart Watches', 'TV & Video']
-    // const applSubCat = ['Refridgeration', 'Washer/Dryer', 'Cooking']
-    // const autoSubCat = ['Used', 'New', 'Parts', 'Sports/Exotic']
-    // const rareSubCat = ['Rare Find', 'Antiques/Vintage', 'Unusual', 'Misc']
-    
-
-    // let catObj = {  Deals: dealSubCat, 
-    //                 Apparel: apparelSubCat, 
-    //                 Electronics: elecSubCat, 
-    //                 Appliances: applSubCat, 
-    //                 Automotive: autoSubCat, 
-    //                 Rarities: rareSubCat
-    //             }

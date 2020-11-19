@@ -11,8 +11,9 @@
     text-align: center;
     flex-direction: column;
     width: 400px;
-    margin: inherit;
-    background-color: rgba(255, 255, 255, 0);
+    margin-top: 200px;
+    margin-bottom: 200px;
+    background-color: rgba(255, 255, 255, 0.801);
     
 }
 
@@ -50,7 +51,7 @@
     margin-bottom: 10px;
 }
 
-#signin-button {
+/* #signin-button {
     text-decoration: none;
     text-align: center;
     font-size: 18px;
@@ -62,10 +63,10 @@
     width: 100%;
     margin-bottom: 10px;
     
-}
+} */
 
 #demologin {
-    text-decoration: none;
+    /* text-decoration: none;
     text-align: center;
     font-size: 18px;
     border: 1px solid #4b4b4b00;
@@ -74,5 +75,5 @@
     background-color:rgb(8, 174, 240);
     height: 40px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
 }

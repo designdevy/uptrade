@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.STRING(5000)
       },
       category: {
+        allowNull: false,
+        type: Sequelize.STRING(255)
+      },
+      subCategory: {
         type: Sequelize.ARRAY(Sequelize.STRING(1000))
       },
       price: {
@@ -31,6 +35,10 @@ module.exports = {
         allowNull: false,
         references: { model: 'Users' },
         type: Sequelize.INTEGER
+      },
+      cart_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'Carts' }
       },
       createdAt: {
         allowNull: false,

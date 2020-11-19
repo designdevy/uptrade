@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(5000),
     },
     category: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    subCategory: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
     price: {
@@ -18,10 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     user_id: {
       type: DataTypes.INTEGER
-    }
+    },
+    cart_id: {
+      type: DataTypes.INTEGER
+    },
   }, {});
   Product.associate = function(models) {
     Product.belongsTo(models.User, { foreignKey: 'user_id' });
+    Product.belongsTo(models.Cart, { foreignKey: 'cart_id' });
     // associations can be defined here
   };
   return Product;

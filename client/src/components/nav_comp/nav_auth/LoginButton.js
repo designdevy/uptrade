@@ -1,7 +1,8 @@
 import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import LoginModal from './LoginModal'
-// import '../../../style/loginmodal.css'
+import { Button } from '@material-ui/core';
+import '../../../style/loginmodal.css'
 
 function LoginButton(){
     const login = LoginModal();
@@ -18,7 +19,7 @@ function LoginButton(){
 
     return(
         <div className="login">
-            <button id="login" type="button" onClick={handleOpen} >Sign in</button>
+            <Button id="loginButton" type="button" onClick={handleOpen} >Sign in</Button>
             <div className="modalcontainer">
                 <Modal 
                     className="login-form-outer"
