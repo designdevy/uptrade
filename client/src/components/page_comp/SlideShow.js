@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from 'react';
+// import ReactDOM from 'react-dom';
 import '../../style/slideshow.css'
 
 
@@ -10,28 +10,21 @@ const SlideShow = ({productArr}) => {
     const [currentDes, setCurrentDes] = useState("")
     const [currentPrice, setCurrentPrice] = useState("")
     const [currentTitle, setCurrentTitle] = useState("")
+    const interval = 5000
+   
     let images = []
     let description = []
     let price = []
     let title = []
     productArr.map((product) => {
-        
-        if(product.category.includes("On Sale") && product.category.includes("Shoes")){
+        if(product.subCategory.includes("On Sale") && product.subCategory.includes("Shoes")){
             images.push(product.img)
             description.push(product.description)
             price.push(product.price)
             title.push(product.title)
         }
-        
     })
-    console.log(images)
     
-    // const images=[
-    //     "https://images-na.ssl-images-amazon.com/images/I/61orXh2c8PL._AC_SX385._SX._UX._SY._UY_.jpg",
-    //     "https://images-na.ssl-images-amazon.com/images/I/61ii6U6-7nL._AC_UX385_.jpg",
-    //     "https://cdn.shopify.com/s/files/1/0078/0615/6847/products/product-image-750037909.jpg?v=1575447458"
-    // ]
-    const interval = 5000
     
     useEffect(() => {
         setCurrentPic(
@@ -46,7 +39,8 @@ const SlideShow = ({productArr}) => {
         setCurrentTitle(
             title[currentSlide]
         );
-            const loop = setInterval(() => {
+        
+        const loop = setInterval(() => {
             if(currentSlide === images.length - 1){
                 setCurrentSlide(0);
             } else {
@@ -54,7 +48,7 @@ const SlideShow = ({productArr}) => {
             }
         }, interval);
         return () => clearInterval(loop);
-    },[images, currentSlide, interval])
+    },[images, description, price, title, currentSlide, interval])
 
     let minusSlide = () => {
         if(currentSlide > 0){
@@ -88,8 +82,8 @@ const SlideShow = ({productArr}) => {
                     </Button>
                         
                 </div>
-                    <a className="prev" onClick={minusSlide}>&#10094;</a>
-                    <a className="next" onClick={plusSlide}>&#10095;</a>
+                    <div className="prev" onClick={minusSlide}>&#10094;</div>
+                    <div className="next" onClick={plusSlide}>&#10095;</div>
             </div>
         </>
     );

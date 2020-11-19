@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from './store/auth';
 import NavBar from './components/nav_comp/NavBar'
-import Landing from './Pages/Landing'
-import Cart from './Pages/Cart'
-import Profile from './Pages/Profile'
-// import UserList from './components/UsersList';
-import { ProtectedRoute } from './store/Routes';
+import Pages from './Pages/Pages'
+// import { saveState, loadState } from './store/localStorage'
 
-function App() {
+function App({state}) {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
 
@@ -17,7 +14,7 @@ function App() {
         const loadUser = async () => {
             // enter your back end route to get the current user
             const res = await fetch("/api/session/");
-
+            
             if (res.ok) {
                 res.data = await res.json(); // current user info
                 dispatch(setUser(res.data.user))
@@ -25,17 +22,14 @@ function App() {
             setLoading(false);
         }
         loadUser();
-    }, []);
+    }, [dispatch, setLoading]);
+    console.log(loading)
 
+    
   return (
     <BrowserRouter>
         <NavBar ></NavBar>
-        <Switch>
-            <Route path="/cart" component={Cart} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/" component={Landing} />
-
-        </Switch>
+        <Pages state={state}/>
     </BrowserRouter>
   );
 }

@@ -13,7 +13,7 @@
     border-bottom: 1px solid #4b4b4b65;
     justify-content: center;
     align-items: center;
-    z-index: 9999999;
+    z-index: 999;
 }
 
 .navbar {
@@ -28,7 +28,7 @@
     padding-top: 5px;
     margin-left: 50px;
     margin-right: 50px;
-    z-index: 99999999;
+    /* z-index: 99999999; */
 }
 
 
@@ -98,7 +98,7 @@
     flex-flow: row nowrap;
     background: white;
     color: black;
-    width: 100%;
+    width: 95%;
     padding-left: 50px;
     padding-right: 50px;
     justify-content: space-between;
@@ -138,13 +138,13 @@
     height: 25px;
     flex-basis: auto;
 } */
-#signup {
+/* #signup {
     border: 1px solid #4b4b4b;
     border-radius: 5px;
     color: white;
     background-color: rgb(8, 174, 240);
     height: 25px;
-}
+} */
 
 .rightnavlogged {
     display: inherit;
@@ -192,7 +192,7 @@
     margin-right: 0;
 }
 
-#categories > span {
+/* #categories > span {
     
-}
+} */
  

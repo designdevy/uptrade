@@ -1,0 +1,13 @@
+.product-card {
+    width: 345px;
+    max-width: 345px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+#add-to-cart {
+    z-index: 999;
+}
+#icon {
+    z-index: 0;
+}

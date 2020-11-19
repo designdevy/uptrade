@@ -1,6 +1,5 @@
 import { Button } from '@material-ui/core';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from 'react';
 // import '../../style/slideshow.css'
 
 
@@ -29,23 +28,7 @@ const CategorySlideShow = ({prices, images, titles}) => {
             }
         }, interval);
         return () => clearInterval(loop);
-    },[images, currentSlide, interval])
-
-    let minusSlide = () => {
-        if(currentSlide > 0){
-            setCurrentSlide(currentSlide - 1);
-        } else {
-            setCurrentSlide(images.length - 1);
-        }
-    }
-
-    let plusSlide = () => {
-        if(currentSlide === images.length - 1){
-            setCurrentSlide(0);
-        } else {
-            setCurrentSlide(currentSlide + 1)
-        }
-    }
+    },[images, currentSlide, interval, prices, titles])
 
     return (
         <>

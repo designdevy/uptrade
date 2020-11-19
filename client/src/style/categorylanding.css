@@ -1,0 +1,20 @@
+#category-wrap {
+    display: inherit;
+    flex-flow: column nowrap;
+    background: rgba(112, 128, 144, 0.308);
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+#product-panel {
+    padding: 10px;
+    text-align: center;
+}
+
+#products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;   
+}

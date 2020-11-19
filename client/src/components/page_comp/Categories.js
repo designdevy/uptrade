@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import CategorySlideShow from './CategorySlides';
 import '../../style/categoryslide.css'
 
 
-function Comp() {
-    let [productArr, setProductArr] = useState([])
+function Comp({productArr}) {
     //Apparel
     const apparelImages = []
     const apparelTitles = []
@@ -17,30 +16,32 @@ function Comp() {
     const applianceImages = []
     const applianceTitles = []
     const appliancePrices = []
-    useEffect(() => {
-        const getProducts = async () => {
-            const res = await fetch('/api/products/')
-            res.data = await res.json();
-            setProductArr(res.data.products)
-            
-            return res;
-        }
-        getProducts()
-    }, []);
+    //Rarities
+    const rareImages = []
+    const rareTitles = []
+    const rarePrices = []
 
     productArr.map((product) => {
-        
-        if(product.category.includes("Tops") || product.category.includes("Bottoms")){
+        if(product.subCategory.includes("Tops") || product.subCategory.includes("Bottoms")){
             apparelImages.push(product.img)
             apparelPrices.push(product.price)
             apparelTitles.push(product.title)   
         }
-        if(product.category.includes("Games") || product.category.includes("Video/Photography") || product.category.includes("Cell Phones & Smart Watches")){
+        if(product.subCategory.includes("Games") || product.subCategory.includes('TV & Video') || product.subCategory.includes("Cell Phones & Smart Watches")){
             elecImages.push(product.img)
             elecPrices.push(product.price)
             elecTitles.push(product.title)
         }
-        
+        if(product.subCategory.includes("Refridgeration") || product.subCategory.includes('Washer/Dryer') || product.subCategory.includes("Cooking")){
+            applianceImages.push(product.img)
+            appliancePrices.push(product.price)
+            applianceTitles.push(product.title)
+        }
+        if(product.subCategory.includes("Antiques/Vintage") || product.subCategory.includes('Rare Find')){
+            rareImages.push(product.img)
+            rarePrices.push(product.price)
+            rareTitles.push(product.title)
+        }
     })
 
     return (
@@ -50,6 +51,12 @@ function Comp() {
            </div>
            <div id="category-2" >
                 <CategorySlideShow images={elecImages} prices={elecPrices} titles={elecTitles}/>
+           </div>
+           <div id="category-3" >
+                <CategorySlideShow images={applianceImages} prices={appliancePrices} titles={applianceTitles}/>
+           </div>
+           <div id="category-4" >
+                <CategorySlideShow images={rareImages} prices={rarePrices} titles={rareTitles}/>
            </div>
         </>
     );
