@@ -8,7 +8,7 @@ import { saveState, loadState } from './store/localStorage'
 // import { createStore } from 'redux'
 // import cart from './store/cart'
 
-const preloadedState = loadState()
+// const preloadedState = loadState()
 
 if (process.env.NODE_ENV !== 'production') {
   const getCSRFToken = () => {
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   getCSRFToken();
 }
 
-const store = configureStore(preloadedState);
+const store = configureStore();
 
 
 if(process.env.NODE_ENV !== 'production'){
@@ -32,7 +32,7 @@ if(process.env.NODE_ENV !== 'production'){
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App state={preloadedState} />
+      <App state={store} />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
