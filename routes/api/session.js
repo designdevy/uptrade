@@ -26,7 +26,7 @@ router.get(
       });
     }
     
-    return next(new AuthenticationError());
+    next(new AuthenticationError());
   })
 );
 
