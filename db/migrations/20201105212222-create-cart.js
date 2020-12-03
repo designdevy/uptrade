@@ -12,10 +12,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Users' },
       },
-      // product_id: {
-      //   type: Sequelize.INTEGER,
-      //   references: { model: 'Products' },
-      // },
+      product_id: {
+        type: Sequelize.ARRAY(Sequelize.STRING(1000)),
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

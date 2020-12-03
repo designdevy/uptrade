@@ -36,10 +36,10 @@ module.exports = {
         references: { model: 'Users' },
         type: Sequelize.INTEGER
       },
-      cart_id: {
-        type: Sequelize.INTEGER,
-        references: { model: 'Carts' }
-      },
+      // cart_id: {
+      //   type: Sequelize.INTEGER,
+      //   references: { model: 'Carts' }
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

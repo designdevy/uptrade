@@ -47,15 +47,19 @@ function Comp({productArr}) {
     return (
         <>
            <div id="category-1" >
+                <h3>Apparel</h3>
                 <CategorySlideShow images={apparelImages} prices={apparelPrices} titles={apparelTitles}/>
            </div>
            <div id="category-2" >
+                <h3>Electronics</h3>
                 <CategorySlideShow images={elecImages} prices={elecPrices} titles={elecTitles}/>
            </div>
            <div id="category-3" >
+                <h3>Appliances</h3>
                 <CategorySlideShow images={applianceImages} prices={appliancePrices} titles={applianceTitles}/>
            </div>
            <div id="category-4" >
+                <h3>Rare Finds</h3>
                 <CategorySlideShow images={rareImages} prices={rarePrices} titles={rareTitles}/>
            </div>
         </>

@@ -6,15 +6,15 @@ import Item from '../components/cart_comp/Item'
 import { useSelector } from 'react-redux'
 
 function Cart() {
-    
     const cart = useSelector(state => state.cart)
-   const getTotal = () => {
-       let total = 0
-       cart.map((item) =>{
-           total += item.price
-        })
-        return parseFloat(total)
-   } 
+    
+    const getTotal = () => {
+        let total = 0
+        cart.map((item) =>{
+            total += item.price
+            })
+        return parseFloat(total).toFixed(2)
+    } 
     
 
     return (

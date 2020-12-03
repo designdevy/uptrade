@@ -51,8 +51,10 @@
     margin-bottom: 10px;
 }
 
-/* #signin-button {
-    text-decoration: none;
+#loginButton {
+    height: fit-content;
+    margin: auto;
+    /* text-decoration: none;
     text-align: center;
     font-size: 18px;
     border: 1px solid #4b4b4b00;
@@ -62,10 +64,11 @@
     height: 40px;
     width: 100%;
     margin-bottom: 10px;
-    
-} */
+     */
+}
 
 #demologin {
+    height: fit-content;
     /* text-decoration: none;
     text-align: center;
     font-size: 18px;

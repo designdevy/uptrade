@@ -16,7 +16,6 @@ import CartLogo from "../../style/svg/059-cart.svg"
 
 // import { Menu } from '@material-ui/core';
 // import { makeStyles } from '@material-ui/core/styles';
-
 // import { Link } from 'react-router-dom';
     
 function RightNav(){

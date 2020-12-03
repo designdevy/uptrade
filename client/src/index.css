@@ -1,12 +1,18 @@
 /* TODO Add site wide styles */
 html {
-    width: 100vw;
+    /* width: 100vw; */
     justify-content: center;
     overflow-x: hidden;
+}
+body {
+    height: 100vh;
 }
 #root {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    margin: 0;
+    height: auto;
+    min-height: 100%;
+    /* margin: auto; */
+    /* margin-bottom: 0px; */
 }
