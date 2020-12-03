@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "per-env",
-    "start:development": "dotenv nodemon ./bin/www",
+    "start:development": "nodemon --ignore client/ -r dotenv/config ./bin/www",
     "start:production": "node ./bin/www",
     "db:create": "dotenv sequelize db:create",
     "db:drop": "dotenv sequelize db:drop",
