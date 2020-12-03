@@ -16,6 +16,7 @@ const SlideShow = ({productArr}) => {
     let description = []
     let price = []
     let title = []
+    
     productArr.map((product) => {
         if(product.subCategory.includes("On Sale") && product.subCategory.includes("Shoes")){
             images.push(product.img)

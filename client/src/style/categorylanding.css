@@ -2,19 +2,25 @@
     display: inherit;
     flex-flow: column nowrap;
     background: rgba(112, 128, 144, 0.308);
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
     width: 100%;
+    /* padding-top: auto; */
     align-content: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 #product-panel {
     padding: 10px;
     text-align: center;
+    margin: auto;
+    justify-content: center;
 }
 
 #products {
+    position: sticky;
     display: flex;
     flex-flow: row wrap;
     justify-content: left;   
+    margin: auto;
 }

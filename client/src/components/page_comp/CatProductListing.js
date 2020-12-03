@@ -40,11 +40,6 @@ function ProductList({category, subCat, products, addItemToCart}) {
   // const currentUserId = useSelector(state => state.auth.id);
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  
-
-  // function addItemToCart(e, product) {
-  //   setCart((prevCart) => ([...prevCart, product]));
-  // }
 
   const handleExpandClick = (e) => {
     
@@ -70,7 +65,7 @@ function ProductList({category, subCat, products, addItemToCart}) {
         />
         <CardContent>
           <Typography variant="body1" color="textSecondary" component="p">
-            {product.createdAt.split("T")[0]}
+            Date Posted: {product.createdAt.split("T")[0]}
           </Typography>
         </CardContent>
         <CardActions disableSpacing >
