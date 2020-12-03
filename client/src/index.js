@@ -10,7 +10,7 @@ import { saveState, loadState } from './store/localStorage'
 
 // const preloadedState = loadState()
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   const getCSRFToken = () => {
     return fetch("/api/csrf/token");
   };
